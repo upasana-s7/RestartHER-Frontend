@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RestartHER | Your Next Chapter</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 </head>
 
@@ -115,13 +115,29 @@
                    L155 290 L165 250 Z"
                 fill="#B87E9C"/>
 
-          <!-- Arm -->
-          <path d="M145 270 Q180 295 225 285"
+          <!-- Forearm and hand: subtle writing movement -->
+          <path class="writing-arm" d="M145 270 Q180 295 225 285"
                 stroke="#D99B78" stroke-width="20"
                 stroke-linecap="round" fill="none"/>
 
-          <!-- Hand -->
-          <circle cx="225" cy="285" r="11" fill="#D99B78"/>
+          <!-- Open notebook on the desk -->
+          <g class="notebook">
+            <path d="M185 288 L235 282 L246 300 L195 307 Z"
+                  fill="#FFFDF9" stroke="#D8B6C5" stroke-width="2"/>
+            <path d="M215 285 L225 303" stroke="#D8B6C5" stroke-width="1.5"/>
+            <path d="M196 294 L210 292 M198 299 L212 297"
+                  stroke="#B87E9C" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- Hand and pen -->
+          <g class="writing-hand">
+            <circle cx="225" cy="285" r="11" fill="#D99B78"/>
+            <path class="writing-pen" d="M221 282 L238 267"
+                  stroke="#74536F" stroke-width="3.5"
+                  stroke-linecap="round"/>
+            <path d="M238 267 L241 264" stroke="#D99B78"
+                  stroke-width="2" stroke-linecap="round"/>
+          </g>
 
           <!-- Mug -->
           <rect x="355" y="270" width="30" height="35"
@@ -428,7 +444,7 @@
 
   </main>
 
-  <script src="js/script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
