@@ -181,12 +181,11 @@ function reviewProfile(event) {
 }
 
 function completeProfile() {
-  const firstName = document.getElementById("firstName").value;
-
-  // Keep the demo profile in this browser tab/session only.
+  const firstName = document.getElementById("firstName").value.trim() || "there";
+  const lastName = document.getElementById("lastName").value;
   const profile = {
     firstName,
-    lastName: document.getElementById("lastName").value,
+    lastName,
     dob: document.getElementById("dob").value,
     phone: document.getElementById("phone").value,
     email: document.getElementById("profileEmail").value,
@@ -200,10 +199,60 @@ function completeProfile() {
     console.warn("Profile could not be saved for this session.", error);
   }
 
-  document.getElementById("dashboardGreeting").textContent =
-    `Welcome to RestartHER, ${firstName}!`;
+  document.getElementById("postWelcomeGreeting").textContent = "Welcome, " + firstName + "!";
+  document.getElementById("homeGreeting").innerHTML = 'Welcome back<span>, ' + escapeHTML(firstName) + '.</span>';
+  document.getElementById("sidebarName").textContent = firstName + (lastName ? " " + lastName.charAt(0) + "." : "");
+  document.getElementById("sidebarAvatar").textContent = firstName.charAt(0).toUpperCase();
+  showScreen("postWelcome");
+}
 
-  showScreen("dashboard");
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  })[character]);
+}
+
+function showDashboardHome(button) {
+  document.getElementById("editorialHome").hidden = false;
+  document.getElementById("featureView").hidden = true;
+  document.getElementById("storyView").hidden = true;
+  document.getElementById("storyLibraryView").hidden = true;
+  document.querySelectorAll(".nav-item").forEach(item => item.classList.remove("active"));
+  if (button) button.classList.add("active");
+}
+
+function openFeature(title, button) {
+  showDashboardHome();
+  document.getElementById("editorialHome").hidden = true;
+  document.getElementById("featureView").hidden = false;
+  document.getElementById("featureTitle").textContent = title;
+  document.getElementById("featureDescription").textContent =
+    title + " will become a dedicated RestartHER space. This prototype keeps the navigation ready for the next build.";
+  document.querySelectorAll(".nav-item").forEach(item => item.classList.remove("active"));
+  if (button) button.classList.add("active");
+}
+
+function openStory(storyKey) {
+  const stories = {
+    featured: ["She paused her career. Her ambition never paused.", "Sample editorial content about returning to work with confidence, building on existing experience, and taking one manageable step at a time."],
+    confidence: ["Starting again, one brave step at a time", "Sample content about rebuilding confidence through small, practical wins."],
+    skills: ["Making room for the skills you already have", "Sample content about recognizing transferable skills and treating experience as a foundation."],
+    reentry: ["A career path can grow in a new direction", "Sample content about exploring flexible pathways and new possibilities after a break."]
+  };
+  const story = stories[storyKey] || stories.featured;
+  document.getElementById("editorialHome").hidden = true;
+  document.getElementById("featureView").hidden = true;
+  document.getElementById("storyLibraryView").hidden = true;
+  document.getElementById("storyView").hidden = false;
+  document.getElementById("storyTitle").textContent = story[0];
+  document.getElementById("storyBody").textContent = story[1];
+}
+
+function openStoryLibrary() {
+  document.getElementById("editorialHome").hidden = true;
+  document.getElementById("featureView").hidden = true;
+  document.getElementById("storyView").hidden = true;
+  document.getElementById("storyLibraryView").hidden = false;
 }
 
 // Automatically move between OTP boxes
