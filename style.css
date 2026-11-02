@@ -177,6 +177,34 @@ h1 {
   animation: gentleFloat 4s ease-in-out infinite;
 }
 
+/* Keep the welcome artwork still; animate only the writing gesture. */
+.welcome-visual .floating-illustration {
+  animation: none;
+}
+
+.writing-hand {
+  transform-box: fill-box;
+  transform-origin: 15% 80%;
+  animation: gentleWriting 2.2s ease-in-out infinite;
+}
+
+.writing-pen {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+  animation: penStroke 2.2s ease-in-out infinite;
+}
+
+@keyframes gentleWriting {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  45%, 65% { transform: rotate(-3deg) translate(-1px, 1px); }
+}
+
+@keyframes penStroke {
+  0%, 15% { stroke-dashoffset: 22; }
+  55%, 75% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 22; }
+}
+
 .welcome-visual svg {
   position: relative;
   width: 100%;
@@ -632,7 +660,9 @@ input[readonly] {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .floating-illustration {
+  .floating-illustration,
+  .writing-hand,
+  .writing-pen {
     animation: none;
   }
 }
