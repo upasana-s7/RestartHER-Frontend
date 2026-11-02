@@ -2,6 +2,7 @@
 let currentEmail = "";
 let generatedOTP = "";
 let isExistingUser = false;
+let profileEntryScreen = "otp";
 
 const profileFields = [
   ["First name", "firstName"],
@@ -39,6 +40,7 @@ function comingSoon() {
 
 function googleDemo() {
   isExistingUser = false;
+  profileEntryScreen = "auth";
 
   // Demo only. Real Google sign-in needs OAuth.
   currentEmail = "google.user@example.com";
@@ -48,12 +50,17 @@ function googleDemo() {
   showScreen("profile");
 }
 
+function goBackFromProfile() {
+  showScreen(profileEntryScreen);
+}
+
 function sendOTP(event) {
   event.preventDefault();
 
   const emailInput = document.getElementById("email");
 
   currentEmail = emailInput.value.trim();
+  profileEntryScreen = "otp";
 
   if (!currentEmail) {
     alert("Please enter your email address.");
@@ -175,6 +182,23 @@ function reviewProfile(event) {
 
 function completeProfile() {
   const firstName = document.getElementById("firstName").value;
+
+  // Keep the demo profile in this browser tab/session only.
+  const profile = {
+    firstName,
+    lastName: document.getElementById("lastName").value,
+    dob: document.getElementById("dob").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("profileEmail").value,
+    location: document.getElementById("location").value,
+    education: document.getElementById("education").value
+  };
+
+  try {
+    sessionStorage.setItem("restartHERProfile", JSON.stringify(profile));
+  } catch (error) {
+    console.warn("Profile could not be saved for this session.", error);
+  }
 
   document.getElementById("dashboardGreeting").textContent =
     `Welcome to RestartHER, ${firstName}!`;
