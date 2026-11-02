@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RestartHER | Your Next Chapter</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <!-- WELCOME SCREEN -->
+    <section class="screen welcome-screen active" id="welcome">
+
+      <div class="welcome-content">
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+
+        <div class="welcome-text">
+          <span class="eyebrow">YOUR NEXT CHAPTER</span>
+
+          <h1>Your career break is a chapter, not the end of your story.</h1>
+
+          <p>
+            Your experience still matters. Rediscover your strengths,
+            rebuild your confidence and take your next career step —
+            at a pace that works for you.
+          </p>
+
+          <button class="primary-btn" onclick="showScreen('roles')">
+            Get Started <span>→</span>
+          </button>
+        </div>
+
+        <div class="welcome-footer">
+          A fresh start. Your way.
+        </div>
+      </div>
+
+      <div class="welcome-visual">
+        <div class="visual-circle"></div>
+
+        <div class="visual-label label-one">Your journey, your pace</div>
+        <div class="visual-label label-two">New beginnings ✨</div>
+
+        <svg class="floating-illustration" viewBox="0 0 440 440"
+             xmlns="http://www.w3.org/2000/svg">
+
+          <!-- Background -->
+          <circle cx="220" cy="220" r="175" fill="#F8E5D9"/>
+
+          <!-- Plant -->
+          <path d="M70 350 Q90 290 75 250" stroke="#829B83"
+                stroke-width="5" fill="none"/>
+          <ellipse cx="65" cy="280" rx="28" ry="13"
+                   fill="#A9BCA2" transform="rotate(-35 65 280)"/>
+          <ellipse cx="91" cy="310" rx="27" ry="12"
+                   fill="#829B83" transform="rotate(30 91 310)"/>
+
+          <!-- Desk -->
+          <rect x="80" y="300" width="290" height="15" rx="7"
+                fill="#9D6F5E"/>
+          <rect x="105" y="315" width="13" height="85" rx="5"
+                fill="#9D6F5E"/>
+          <rect x="335" y="315" width="13" height="85" rx="5"
+                fill="#9D6F5E"/>
+
+          <!-- Laptop -->
+          <rect x="210" y="235" width="120" height="70" rx="8"
+                fill="#74536F"/>
+          <rect x="218" y="243" width="104" height="54" rx="4"
+                fill="#F8F0E8"/>
+          <path d="M200 305 H340 L330 313 H210 Z"
+                fill="#B68C9D"/>
+
+          <!-- Laptop screen details -->
+          <rect x="230" y="255" width="35" height="4" rx="2"
+                fill="#B68C9D"/>
+          <rect x="230" y="265" width="65" height="4" rx="2"
+                fill="#D8B6C5"/>
+          <rect x="230" y="275" width="50" height="4" rx="2"
+                fill="#D8B6C5"/>
+
+          <!-- Woman's hair -->
+          <path d="M130 150 Q115 85 180 80 Q245 85 245 160
+                   L235 235 L145 235 Z"
+                fill="#4B3548"/>
+
+          <!-- Face -->
+          <ellipse cx="185" cy="155" rx="48" ry="58"
+                   fill="#D99B78"/>
+
+          <!-- Hair front -->
+          <path d="M137 150 Q120 90 180 80 Q225 80 238 125
+                   Q210 115 185 120 Q160 120 137 150"
+                fill="#4B3548"/>
+
+          <!-- Neck -->
+          <rect x="170" y="200" width="30" height="35"
+                rx="10" fill="#D99B78"/>
+
+          <!-- Body -->
+          <path d="M130 235 Q185 210 235 235
+                   L265 300 H105 Z"
+                fill="#B87E9C"/>
+
+          <!-- Sleeve -->
+          <path d="M135 240 Q110 250 115 285
+                   L155 290 L165 250 Z"
+                fill="#B87E9C"/>
+
+          <!-- Arm -->
+          <path d="M145 270 Q180 295 225 285"
+                stroke="#D99B78" stroke-width="20"
+                stroke-linecap="round" fill="none"/>
+
+          <!-- Hand -->
+          <circle cx="225" cy="285" r="11" fill="#D99B78"/>
+
+          <!-- Mug -->
+          <rect x="355" y="270" width="30" height="35"
+                rx="6" fill="#829B83"/>
+          <path d="M385 278 Q400 278 395 290 Q392 298 385 298"
+                stroke="#829B83" stroke-width="5" fill="none"/>
+
+          <!-- Decorative sparkles -->
+          <path d="M330 100 L335 115 L350 120 L335 125 L330 140
+                   L325 125 L310 120 L325 115 Z"
+                fill="#C69AAE"/>
+          <circle cx="100" cy="180" r="7" fill="#D9A58B"/>
+          <circle cx="350" cy="190" r="5" fill="#829B83"/>
+
+        </svg>
+      </div>
+
+    </section>
+
+
+    <!-- ROLE SELECTION -->
+    <section class="screen" id="roles">
+
+      <div class="page-header">
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+      </div>
+
+      <div class="center-content">
+        <span class="eyebrow">LET'S GET STARTED</span>
+        <h1>Welcome to RestartHER</h1>
+        <h2>How would you like to continue?</h2>
+        <p>Choose a role that best describes you.</p>
+
+        <div class="role-grid">
+
+          <button class="role-card" onclick="selectRole('Woman')">
+            <div class="role-icon woman-icon">♀</div>
+            <span>Woman</span>
+          </button>
+
+          <button class="role-card" onclick="comingSoon()">
+            <div class="role-icon mentor-icon">✦</div>
+            <span>Mentor</span>
+          </button>
+
+          <button class="role-card" onclick="comingSoon()">
+            <div class="role-icon business-icon">⌂</div>
+            <span>Business / Organization</span>
+          </button>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- AUTHENTICATION -->
+    <section class="screen" id="auth">
+
+      <div class="page-header">
+        <button class="back-btn" onclick="showScreen('roles')">← Back</button>
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+      </div>
+
+      <div class="auth-card">
+
+        <div class="auth-illustration floating-illustration">
+          ✉
+        </div>
+
+        <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
+        <h1>Create your account</h1>
+        <p>Let's get you started with RestartHER.</p>
+
+        <button class="google-btn" onclick="googleDemo()">
+          <span class="google-logo">G</span>
+          Continue with Google
+        </button>
+
+        <div class="separator"><span>or</span></div>
+
+        <form onsubmit="sendOTP(event)">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="you@example.com" required>
+
+          <button class="primary-btn full-width" type="submit">
+            Continue with Email →
+          </button>
+        </form>
+
+        <p class="auth-note">
+          Already have an account? <a href="#" onclick="existingUser(event)">Sign in</a>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- OTP VERIFICATION -->
+    <section class="screen" id="otp">
+
+      <div class="page-header">
+        <button class="back-btn" onclick="showScreen('auth')">← Back</button>
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+      </div>
+
+      <div class="auth-card">
+
+        <div class="auth-illustration floating-illustration">✉</div>
+
+        <span class="eyebrow">EMAIL VERIFICATION</span>
+        <h1>Check your inbox</h1>
+
+        <p>Enter the six-digit verification code for</p>
+        <strong id="otpEmail"></strong>
+
+        <form onsubmit="verifyOTP(event)">
+
+          <div class="otp-inputs">
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+            <input maxlength="1" inputmode="numeric" class="otp-box" required>
+          </div>
+
+          <button class="primary-btn full-width" type="submit">
+            Verify Email →
+          </button>
+
+        </form>
+
+        <p class="auth-note">
+          Didn't receive a code?
+          <a href="#" onclick="resendOTP(event)">Resend Code</a>
+        </p>
+
+        <p id="otpDemoHint" class="demo-hint"></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROFILE FORM -->
+    <section class="screen" id="profile">
+
+      <div class="page-header">
+        <button class="back-btn" onclick="showScreen('otp')">← Back</button>
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+      </div>
+
+      <div class="form-card">
+
+        <div class="step-label">STEP 1 OF 2</div>
+
+        <h1>A little about you</h1>
+        <p>Let's get to know you better.</p>
+
+        <form id="profileForm" onsubmit="reviewProfile(event)">
+
+          <div class="photo-upload">
+            <div class="photo-preview" id="photoPreview">+</div>
+            <label for="photo">Add profile photo <span>(Optional)</span></label>
+            <input type="file" id="photo" accept="image/*"
+                   onchange="previewPhoto(event)">
+          </div>
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label>First name</label>
+              <input id="firstName" required placeholder="First name">
+            </div>
+
+            <div class="field">
+              <label>Last name</label>
+              <input id="lastName" required placeholder="Last name">
+            </div>
+
+            <div class="field">
+              <label>Date of birth</label>
+              <input id="dob" type="date" required>
+            </div>
+
+            <div class="field">
+              <label>Gender</label>
+              <input value="Female" readonly>
+            </div>
+
+            <div class="field">
+              <label>Phone number</label>
+              <input id="phone" type="tel" placeholder="Phone number" required>
+            </div>
+
+            <div class="field">
+              <label>Email address</label>
+              <input id="profileEmail" type="email" readonly>
+            </div>
+
+            <div class="field full-field">
+              <label>Location</label>
+              <input id="location" placeholder="City, State" required>
+            </div>
+
+            <div class="field full-field">
+              <label>Highest education completed</label>
+              <select id="education" required>
+                <option value="">Select education</option>
+                <option>High School</option>
+                <option>Diploma</option>
+                <option>Bachelor's Degree</option>
+                <option>Master's Degree</option>
+                <option>PhD</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+          </div>
+
+          <button class="primary-btn full-width" type="submit">
+            Review Profile →
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- REVIEW PROFILE -->
+    <section class="screen" id="review">
+
+      <div class="page-header">
+        <button class="back-btn" onclick="showScreen('profile')">← Back</button>
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+      </div>
+
+      <div class="form-card">
+
+        <div class="step-label">STEP 2 OF 2</div>
+
+        <h1>Review your profile</h1>
+        <p>Make sure everything looks right.</p>
+
+        <div id="reviewDetails" class="review-details"></div>
+
+        <button class="secondary-btn full-width"
+                onclick="showScreen('profile')">
+          Edit Profile
+        </button>
+
+        <button class="primary-btn full-width"
+                onclick="completeProfile()">
+          Complete Profile →
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- DASHBOARD PLACEHOLDER -->
+    <section class="screen" id="dashboard">
+
+      <div class="dashboard-welcome">
+        <div class="brand">
+          <span class="brand-icon">R</span>
+          RestartHER
+        </div>
+
+        <div class="dashboard-content">
+          <div class="dashboard-illustration floating-illustration">✦</div>
+
+          <span class="eyebrow">A NEW BEGINNING</span>
+          <h1 id="dashboardGreeting">Welcome to RestartHER!</h1>
+          <p>Your next chapter starts here.</p>
+
+          <button class="primary-btn" onclick="alert('Dashboard coming soon!')">
+            Explore RestartHER →
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
