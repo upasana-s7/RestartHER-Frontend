@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RestartHER | Your Next Chapter</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -175,24 +175,19 @@
         <p>Choose a role that best describes you.</p>
 
         <div class="role-grid">
-
           <button class="role-card" onclick="selectRole('Woman')">
-            <div class="role-icon woman-icon">♀</div>
-            <span>Woman</span>
+            <span class="role-art role-art-woman" aria-hidden="true"><span class="art-sun"></span><span class="art-person"></span><span class="art-book"></span></span>
+            <span class="role-card-copy"><strong>Women</strong><small>Find your way back to work</small></span>
           </button>
-
           <button class="role-card" onclick="comingSoon()">
-            <div class="role-icon mentor-icon">✦</div>
-            <span>Mentor</span>
+            <span class="role-art role-art-mentor" aria-hidden="true"><span class="art-mentor-person"></span><span class="art-chat"></span><span class="art-star">✦</span></span>
+            <span class="role-card-copy"><strong>Mentor</strong><small>Guide someone’s next chapter</small></span>
           </button>
-
           <button class="role-card" onclick="comingSoon()">
-            <div class="role-icon business-icon">⌂</div>
-            <span>Business / Organization</span>
+            <span class="role-art role-art-business" aria-hidden="true"><span class="art-building"></span><span class="art-heart">♥</span></span>
+            <span class="role-card-copy"><strong>Business / Organization</strong><small>Support inclusive career growth</small></span>
           </button>
-
-        </div>
-      </div>
+        </div>      </div>
 
     </section>
 
@@ -418,30 +413,59 @@
     </section>
 
 
-    <!-- DASHBOARD PLACEHOLDER -->
-    <section class="screen" id="dashboard">
-
-      <div class="dashboard-welcome">
-        <div class="brand">
-          <span class="brand-icon">R</span>
-          RestartHER
-        </div>
-
-        <div class="dashboard-content">
-          <div class="dashboard-illustration floating-illustration">✦</div>
-
+    <!-- PERSONALIZED WELCOME AFTER PROFILE -->
+    <section class="screen post-profile-welcome" id="postWelcome">
+      <div class="post-welcome-inner">
+        <div class="brand"><span class="brand-icon">R</span> RestartHER</div>
+        <div class="post-welcome-copy">
           <span class="eyebrow">A NEW BEGINNING</span>
-          <h1 id="dashboardGreeting">Welcome to RestartHER!</h1>
-          <p>Your next chapter starts here.</p>
-
-          <button class="primary-btn" onclick="alert('Dashboard coming soon!')">
-            Explore RestartHER →
-          </button>
+          <p class="welcome-script">Your next chapter</p>
+          <h1 id="postWelcomeGreeting">Welcome back!</h1>
+          <p>Your experience matters. Let’s make space for what comes next.</p>
+          <button class="primary-btn" onclick="showScreen('dashboard')">Explore RestartHER <span>→</span></button>
         </div>
+        <div class="post-welcome-art" aria-hidden="true"><span class="welcome-art-sun"></span><span class="welcome-art-flower">✿</span><span class="welcome-art-star">✦</span></div>
       </div>
-
     </section>
 
+    <!-- EDITORIAL HOME -->
+    <section class="screen editorial-screen" id="dashboard">
+      <aside class="editorial-sidebar">
+        <div class="brand"><span class="brand-icon">R</span><span>RestartHER</span></div>
+        <span class="sidebar-label">YOUR SPACE</span>
+        <nav class="sidebar-nav" aria-label="Main navigation">
+          <button class="nav-item active" onclick="showDashboardHome(this)">⌂ <span>Home</span></button>
+          <button class="nav-item" onclick="openFeature('My Career Journey',this)">↗ <span>My Career Journey</span></button>
+          <button class="nav-item" onclick="openFeature('Skill Studio',this)">✳ <span>Skill Studio</span></button>
+          <button class="nav-item" onclick="openFeature('Opportunities',this)">✦ <span>Opportunities</span></button>
+          <button class="nav-item" onclick="openFeature('Mentorship',this)">♡ <span>Mentorship</span></button>
+          <button class="nav-item" onclick="openFeature('Community',this)">◌ <span>Community</span></button>
+          <button class="nav-item" onclick="openFeature('Achievements',this)">✧ <span>Achievements</span></button>
+        </nav>
+        <div class="sidebar-bottom"><button class="nav-item" onclick="openFeature('Settings & help',this)">⚙ <span>Settings & help</span></button><div class="sidebar-profile"><span class="profile-avatar" id="sidebarAvatar">P</span><span><strong id="sidebarName">Priya</strong><small>Your next chapter</small></span></div></div>
+      </aside>
+
+      <div class="editorial-main">
+        <header class="editorial-topbar"><span class="topbar-kicker">THE RESTARTHER EDIT</span><span class="topbar-date">A space for your next chapter <span>✦</span></span></header>
+        <div id="editorialHome">
+          <div class="home-greeting"><span class="eyebrow">YOUR STORY, STILL UNFOLDING</span><h1 id="homeGreeting">Welcome back<span>, Priya.</span></h1><p>There’s more to your story. Let’s explore what’s next.</p></div>
+          <article class="featured-story">
+            <div class="featured-art" aria-label="Decorative illustration of a woman returning to her career"><span class="featured-art-shape"></span><span class="featured-art-person"></span><span class="featured-art-spark">✦</span><span class="featured-art-label">THE COMEBACK EDIT</span></div>
+            <div class="featured-copy"><span class="story-category">FEATURED • SAMPLE STORY</span><h2>She paused her career. <em>Her ambition never paused.</em></h2><p>A thoughtful look at the confidence, skills and small steps that can help shape a return to work.</p><button class="text-link" onclick="openStory('featured')">Read story <span>↗</span></button></div>
+          </article>
+          <div class="story-section-heading"><div><span class="eyebrow">MORE STORIES</span><h2>Every comeback is different.</h2></div><button class="text-link" onclick="openStoryLibrary()">Read more stories <span>→</span></button></div>
+          <div class="story-grid">
+            <article class="story-card story-card-rose"><div class="story-card-art art-books"><span>✦</span><i></i><b></b></div><div class="story-card-copy"><span class="story-category">SAMPLE • CONFIDENCE</span><h3>Starting again, one brave step at a time</h3><p>Small wins can make a new beginning feel possible.</p><button class="text-link" onclick="openStory('confidence')">Read more ↗</button></div></article>
+            <article class="story-card story-card-peach"><div class="story-card-art art-laptop"><span>✳</span><i></i><b></b></div><div class="story-card-copy"><span class="story-category">SAMPLE • SKILLS</span><h3>Making room for the skills you already have</h3><p>Your experience is a foundation—not a blank slate.</p><button class="text-link" onclick="openStory('skills')">Read more ↗</button></div></article>
+            <article class="story-card story-card-lilac"><div class="story-card-art art-flowers"><span>✿</span><i></i><b></b></div><div class="story-card-copy"><span class="story-category">SAMPLE • RE-ENTRY</span><h3>A career path can grow in a new direction</h3><p>Returning doesn’t have to mean returning to the same place.</p><button class="text-link" onclick="openStory('reentry')">Read more ↗</button></div></article>
+          </div>
+          <div class="story-library-cta"><span>There’s a story for every kind of beginning.</span><button class="text-link" onclick="openStoryLibrary()">Read more stories <span>→</span></button></div>
+        </div>
+        <div id="featureView" class="feature-view" hidden><button class="text-link feature-back" onclick="showDashboardHome()">← Back to Home</button><span class="eyebrow">YOUR RESTARTHER SPACE</span><h1 id="featureTitle">My Career Journey</h1><p id="featureDescription">Your personalized space is taking shape.</p><div class="feature-placeholder-art">A new chapter, built at your pace. <span>✦</span></div></div>
+        <div id="storyView" class="feature-view" hidden><button class="text-link feature-back" onclick="showDashboardHome()">← Back to stories</button><span class="eyebrow">THE RESTARTHER EDIT • SAMPLE</span><h1 id="storyTitle">A story of a new beginning</h1><p id="storyBody">This is sample prototype content. Verified real-world stories will be added with source links before presenting them as factual stories.</p><div class="story-note">Prototype sample — not a real person’s story.</div></div>
+        <div id="storyLibraryView" class="feature-view" hidden><button class="text-link feature-back" onclick="showDashboardHome()">← Back to Home</button><span class="eyebrow">THE STORY LIBRARY</span><h1>Every comeback is different.</h1><p>Explore stories of confidence, career re-entry, learning and fresh starts.</p><div class="story-note">Prototype library. Real stories will be added with verifiable sources.</div></div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
