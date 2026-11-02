@@ -846,3 +846,23 @@ body { background: var(--ivory); color: var(--charcoal); }
   .story-section-heading { align-items:flex-start;flex-direction:column; }
   .story-library-cta { align-items:flex-start;gap:15px;flex-direction:column; }
 }
+
+
+/* Preserve the original onboarding screens while the editorial area uses the new palette */
+#welcome { background:#fffaf5; color:#352b35; }
+#welcome .brand { color:#74536f; }
+#welcome .brand-icon { background:#74536f; }
+#welcome .eyebrow { color:#b87e9c; }
+#welcome h1 { font-family:"Playfair Display",serif; }
+#welcome .primary-btn { background:#74536f; }
+#welcome .primary-btn:hover { background:#5d4058; }
+
+#auth, #otp, #profile, #review { background:#fffaf5; color:#352b35; }
+#auth .brand, #otp .brand, #profile .brand, #review .brand { color:#74536f; }
+#auth .brand-icon, #otp .brand-icon, #profile .brand-icon, #review .brand-icon { background:#74536f; }
+#auth .eyebrow, #otp .eyebrow, #profile .eyebrow, #review .eyebrow,
+#profile .step-label, #review .step-label { color:#b87e9c; }
+#auth .primary-btn, #otp .primary-btn, #profile .primary-btn, #review .primary-btn { background:#74536f; }
+#auth .primary-btn:hover, #otp .primary-btn:hover, #profile .primary-btn:hover, #review .primary-btn:hover { background:#5d4058; }
+#auth a, #otp a { color:#74536f; }
+#auth input:focus, #otp input:focus, #profile input:focus, #profile select:focus { border-color:#b87e9c; }
